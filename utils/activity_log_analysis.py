@@ -75,8 +75,11 @@ def extract_participant_location(par_id: int, par_data: pd.DataFrame, time_list:
     # plot data
     plt.scatter(x, y, s=0.5)
 
-    # save plot in results/par_{par_id}/locations_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/locations_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Locations')
+
+    # save plot in log/par_{par_id}/locations_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/locations_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -94,8 +97,11 @@ def extract_participant_mode(par_id: int, par_data: pd.DataFrame, time_data: Lis
     # plot data with scatter plot
     plt.scatter(time_data, mode_data, s=0.5, c=[color_map[mode] for mode in mode_data])
 
-    # save plot in results/par_{par_id}/modes_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/modes_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Modes')
+
+    # save plot in log/par_{par_id}/modes_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/modes_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -113,8 +119,11 @@ def extract_participant_hunger(par_id: int, par_data: pd.DataFrame, time_data: L
     # plot data with scatter plot
     plt.scatter(time_data, hunger_data, s=0.5, c=[color_map[x] for x in hunger_data])
 
-    # save plot in results/par_{par_id}/hunger_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/hunger_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Hunger Status')
+
+    # save plot in log/par_{par_id}/hunger_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/hunger_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -132,8 +141,11 @@ def extract_participant_sleep(par_id: int, par_data: pd.DataFrame, time_data: Li
     # plot data with scatter plot
     plt.scatter(time_data, sleep_data, s=0.5, c=[color_map[x] for x in sleep_data])
 
-    # save plot in results/par_{par_id}/sleep_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/sleep_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Sleep Status')
+
+    # save plot in log/par_{par_id}/sleep_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/sleep_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -149,8 +161,11 @@ def extract_participant_apartment(par_id: int, par_data: pd.DataFrame, time_data
     # plot data
     plt.plot(time_data, apartment_data)
 
-    # save plot in results/par_{par_id}/apartments_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/apartments_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Apartments')
+
+    # save plot in log/par_{par_id}/apartments_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/apartments_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -166,8 +181,11 @@ def extract_participant_available_balance(par_id: int, par_data: pd.DataFrame, t
     # plot data
     plt.plot(time_data, available_balance_data)
 
-    # save plot in results/par_{par_id}/available_balance_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/available_balance_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Available Balance')
+
+    # save plot in log/par_{par_id}/available_balance_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/available_balance_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -183,8 +201,11 @@ def extract_participant_job(par_id: int, par_data: pd.DataFrame, time_data: List
     # plot data
     plt.plot(time_data, job_data)
 
-    # save plot in results/par_{par_id}/jobs_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/jobs_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Jobs')
+
+    # save plot in log/par_{par_id}/jobs_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/jobs_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -201,8 +222,11 @@ def extract_participant_financial_status(par_id: int, par_data: pd.DataFrame, ti
     # plot data
     plt.plot(time_data, financial_status_data)
 
-    # save plot in results/par_{par_id}/financial_status_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/financial_status_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Financial Status')
+
+    # save plot in log/par_{par_id}/financial_status_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/financial_status_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -218,8 +242,11 @@ def extract_participant_daily_food_budget(par_id: int, par_data: pd.DataFrame, t
     # plot data
     plt.plot(time_data, daily_food_budget_data)
 
-    # save plot in results/par_{par_id}/daily_food_budget_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/daily_food_budget_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Daily Food Budget')
+
+    # save plot in log/par_{par_id}/daily_food_budget_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/daily_food_budget_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -235,8 +262,11 @@ def extract_participant_weekly_extra_budget(par_id: int, par_data: pd.DataFrame,
     # plot data
     plt.plot(time_data, weekly_extra_budget_data)
 
-    # save plot in results/par_{par_id}/weekly_extra_budget_{par_id}.png
-    plt.savefig(f'./results/par_{par_id}/weekly_extra_budget_{par_id}.png')
+    # set title
+    plt.title(f'Participant {par_id} Weekly Extra Budget')
+
+    # save plot in log/par_{par_id}/weekly_extra_budget_{par_id}.png
+    plt.savefig(f'./log/par_{par_id}/weekly_extra_budget_{par_id}.png')
 
     # clear plot
     plt.clf()
@@ -292,8 +322,8 @@ if __name__ == '__main__':
     print("extracting data for {} participants...".format(args.num_of_par))
     for i in tqdm(range(args.num_of_par)):
         # make directory for each participant if it does not exist
-        if not os.path.exists('./results/par_{}'.format(i)):
-            os.makedirs('./results/par_{}'.format(i))
+        if not os.path.exists('./log/par_{}'.format(i)):
+            os.makedirs('./log/par_{}'.format(i))
         par_data = data[data['participantId'] == i]
         time_stamp = par_data['timestamp'].tolist()
         for func in func_list:
