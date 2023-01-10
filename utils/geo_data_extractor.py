@@ -1,6 +1,5 @@
 import json
 import os
-import math
 from typing import List, Dict
 from argparse import ArgumentParser
 
