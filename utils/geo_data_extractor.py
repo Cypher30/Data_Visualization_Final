@@ -1,5 +1,6 @@
 import json
 import os
+import math
 from typing import List, Dict
 from argparse import ArgumentParser
 
@@ -84,6 +85,7 @@ if __name__ == "__main__":
 
     # Read the data
     df = pd.read_csv(args.input)
+    df = df.fillna('null')
 
     # Extract the data and convert to GeoJSON format
     geo_data = {}
