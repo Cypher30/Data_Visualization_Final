@@ -72,8 +72,10 @@ def generate_geo_data(df: pd.DataFrame, i: int, loc_attr: str) -> Dict:
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument("--input", type=str, default="../data/Attributes/Apartments.csv", help="input .csv file")
-    parser.add_argument("--output", type=str, default=None, help="output .json file")
+    parser.add_argument("--input", type=str, default="../data/Attributes/Apartments.csv", 
+                        help="input .csv file, default is ../data/Attributes/Apartments.csv")
+    parser.add_argument("--output", type=str, default=None, 
+                        help="output .json file, default is None (using the same name as input file)")
     args = parser.parse_args()
 
     if args.output is None:
