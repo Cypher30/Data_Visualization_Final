@@ -94,7 +94,9 @@ if __name__ == "__main__":
     attributes = df.columns.tolist()
 
     # get location attribute
-    loc_attr = next(filter(lambda x: "location" in x.lower(), attributes))
+    loc_attr = next(filter(lambda x: x in ["location", "currentLocation"], attributes), None)
+    if loc_attr is None:
+        raise ValueError("Cannot find location attribute in the data.")
 
     # iterate over each row
     for i in tqdm(range(len(df))):
