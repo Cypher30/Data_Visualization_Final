@@ -1,0 +1,3547 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 379,
+                "buildingId": 823
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1849.997168394888,
+                    1744.6010147106394
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 380,
+                "buildingId": 154
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    41.51783767879146,
+                    418.7264799744545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 381,
+                "buildingId": 279
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    877.2786575380362,
+                    1358.5441805909259
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 382,
+                "buildingId": 3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    670.3987400004884,
+                    1584.4743462106067
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 383,
+                "buildingId": 146
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    829.9556783260775,
+                    2163.4803049897623
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 384,
+                "buildingId": 527
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    880.1644882398598,
+                    4339.7016557216575
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 385,
+                "buildingId": 782
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    231.13884534051988,
+                    1095.6471792268785
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 386,
+                "buildingId": 596
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1349.8842287593952,
+                    1610.4623628717086
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 387,
+                "buildingId": 880
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    864.9382009582821,
+                    1556.3972795892669
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 388,
+                "buildingId": 986
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    611.8427226577171,
+                    2550.7250184246723
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 389,
+                "buildingId": 1020
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1749.107722959826,
+                    4023.6598528872755
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 390,
+                "buildingId": 347
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    994.4462620941047,
+                    3762.3654281251634
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 391,
+                "buildingId": 632
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    609.8156412485578,
+                    787.4692664792319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 392,
+                "buildingId": 315
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -885.2966139548657,
+                    1555.9764946386085
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 393,
+                "buildingId": 592
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    903.9691099852218,
+                    4220.741537877808
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 394,
+                "buildingId": 893
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    865.149408963124,
+                    982.7393731902811
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 395,
+                "buildingId": 230
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    286.586327845334,
+                    1725.5999247626096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 396,
+                "buildingId": 590
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    868.902110395577,
+                    4390.34074468453
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 397,
+                "buildingId": 351
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1499.3204774627252,
+                    4304.553083816536
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 398,
+                "buildingId": 692
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    754.0987512384932,
+                    1394.0500627767071
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 399,
+                "buildingId": 180
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1626.36173317109,
+                    4226.189405838731
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 400,
+                "buildingId": 227
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    753.1769059100845,
+                    1739.395851679909
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 401,
+                "buildingId": 623
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1674.8630003427375,
+                    1638.1520588255166
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 402,
+                "buildingId": 717
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1004.1152674725888,
+                    4462.540163068401
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 403,
+                "buildingId": 1023
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2026.3999572104358,
+                    4142.402774048681
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 404,
+                "buildingId": 103
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2630.0,
+                    4050.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 405,
+                "buildingId": 982
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1535.4111740520664,
+                    4021.741043075247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 406,
+                "buildingId": 347
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    973.2374190327052,
+                    3805.640410966102
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 407,
+                "buildingId": 1033
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1105.2630658126443,
+                    3730.801103253373
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 408,
+                "buildingId": 516
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    412.9860808984934,
+                    1033.1806025214216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 409,
+                "buildingId": 225
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1207.490101417887,
+                    4007.885706041321
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 410,
+                "buildingId": 1024
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1376.3976505541523,
+                    4822.779542501879
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 411,
+                "buildingId": 527
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    916.9315425022253,
+                    4292.958506850986
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 412,
+                "buildingId": 1009
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    496.2476568904982,
+                    1686.1524496266945
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 413,
+                "buildingId": 354
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    917.1190165763343,
+                    2102.895037900609
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 414,
+                "buildingId": 983
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.06554016401982,
+                    1511.1129553803012
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 415,
+                "buildingId": 982
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1496.4456131589884,
+                    4021.741043075247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 416,
+                "buildingId": 493
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    507.31810222892034,
+                    1381.6774426214972
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 417,
+                "buildingId": 315
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -903.1271422325927,
+                    1570.7679946298354
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 418,
+                "buildingId": 472
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    789.621374888836,
+                    1269.8729153421614
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 419,
+                "buildingId": 511
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    660.2070252315734,
+                    3532.331326221758
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 420,
+                "buildingId": 795
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1677.4145716575592,
+                    4234.689307976414
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 421,
+                "buildingId": 479
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    813.0476801480482,
+                    4199.837241599387
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 422,
+                "buildingId": 317
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1273.4344092361837,
+                    1252.930095226732
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 423,
+                "buildingId": 304
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    650.4125958509642,
+                    1744.50624697462
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 424,
+                "buildingId": 936
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.59877121487088,
+                    1259.7742218297456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 425,
+                "buildingId": 946
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -328.8906021165615,
+                    1795.1079117198856
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 426,
+                "buildingId": 256
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -904.2325319573049,
+                    1335.9506479412894
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 427,
+                "buildingId": 315
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -885.2966139548657,
+                    1555.9764946386085
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 428,
+                "buildingId": 323
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1174.5599898893972,
+                    3684.5515693344405
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 429,
+                "buildingId": 964
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    715.9086691087551,
+                    4418.132191398763
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 430,
+                "buildingId": 304
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    707.1111664944394,
+                    2001.4772026036535
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 431,
+                "buildingId": 946
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -294.35496310306917,
+                    1795.1079117198856
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 432,
+                "buildingId": 142
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    991.3270590871906,
+                    4100.917174659022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 433,
+                "buildingId": 516
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    318.94970745415804,
+                    1033.1806025214216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 434,
+                "buildingId": 150
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    800.6342599068146,
+                    4103.165163999878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 435,
+                "buildingId": 34
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1122.7448164206246,
+                    4383.066969959758
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 436,
+                "buildingId": 1024
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1376.3976505541523,
+                    4861.346259046002
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 437,
+                "buildingId": 511
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    660.2070252315734,
+                    3610.994566867167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 438,
+                "buildingId": 972
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2130.281249848629,
+                    4828.020411811667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 439,
+                "buildingId": 395
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    585.2216880077107,
+                    3622.7180435904966
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 440,
+                "buildingId": 644
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    448.79913987469365,
+                    4328.78174286464
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 441,
+                "buildingId": 241
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.95690431663532,
+                    1423.077479497391
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 829,
+                "buildingId": 411
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1683.9788287469512,
+                    4166.34595719268
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 830,
+                "buildingId": 421
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -804.6120047431612,
+                    5042.0163759841835
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 831,
+                "buildingId": 32
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2200.279972988196,
+                    3572.4693137151007
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 832,
+                "buildingId": 549
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -831.9562922398395,
+                    4676.4089408349555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 833,
+                "buildingId": 93
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1967.8258905516104,
+                    4299.950272203162
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 834,
+                "buildingId": 869
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2380.139484985013,
+                    2944.7204566724226
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 835,
+                "buildingId": 619
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2101.689510602101,
+                    4262.490673412702
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 836,
+                "buildingId": 694
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -692.9825370378298,
+                    4950.223259408762
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 837,
+                "buildingId": 17
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2236.8263209885145,
+                    5274.27538066303
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 838,
+                "buildingId": 422
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1403.8103454524935,
+                    4457.26433207949
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 839,
+                "buildingId": 162
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1567.7082661009404,
+                    4491.2624087298655
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 840,
+                "buildingId": 917
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1771.452216635636,
+                    4258.263943913515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 841,
+                "buildingId": 917
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1771.452216635636,
+                    4386.238292917949
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 842,
+                "buildingId": 773
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -692.7127197082955,
+                    5040.3388326223985
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 843,
+                "buildingId": 869
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2330.4222998927135,
+                    2944.7204566724226
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 844,
+                "buildingId": 86
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -836.719215114457,
+                    4482.040750623393
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 845,
+                "buildingId": 373
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2363.1419320065197,
+                    2673.8808116595965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 846,
+                "buildingId": 966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -996.7808287569317,
+                    4750.184044489247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 847,
+                "buildingId": 917
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1680.9362530924764,
+                    4258.263943913515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 848,
+                "buildingId": 121
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -468.02948129574554,
+                    4779.921390126033
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 849,
+                "buildingId": 426
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2231.66793504236,
+                    2598.728790351024
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 850,
+                "buildingId": 485
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2364.178807858101,
+                    5198.1957151603365
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 851,
+                "buildingId": 544
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1398.3957137180148,
+                    4280.0291470642405
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 852,
+                "buildingId": 474
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -820.4751468446739,
+                    4770.301635511239
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 853,
+                "buildingId": 549
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -811.6790007765514,
+                    4695.717947460926
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 854,
+                "buildingId": 446
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2107.0655661560804,
+                    4184.061539506543
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 855,
+                "buildingId": 375
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -784.6236528229551,
+                    4940.6907489765335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 856,
+                "buildingId": 121
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -468.02948129574554,
+                    4846.264154979615
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 857,
+                "buildingId": 190
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1096.0839701505342,
+                    4912.223245927846
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 858,
+                "buildingId": 937
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1072.87107729431,
+                    4660.49395382038
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 859,
+                "buildingId": 238
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1684.5679842891263,
+                    3880.0711276345087
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 860,
+                "buildingId": 132
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -836.8537841209326,
+                    4575.535706396641
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 861,
+                "buildingId": 151
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2235.2922404843403,
+                    5106.71812915923
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 862,
+                "buildingId": 578
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1475.3580476204697,
+                    4473.948598738494
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 863,
+                "buildingId": 93
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1967.8258905516104,
+                    4254.2510682971215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 864,
+                "buildingId": 118
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1885.1886006319482,
+                    4569.0851981845035
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 865,
+                "buildingId": 862
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1968.219929915483,
+                    4032.689324603983
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 866,
+                "buildingId": 578
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1496.9713369216481,
+                    4493.171613333192
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 867,
+                "buildingId": 118
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1903.2691698783528,
+                    4549.78019591636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 868,
+                "buildingId": 416
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1982.7850080737494,
+                    4381.550830536558
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 869,
+                "buildingId": 132
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -855.2484275272525,
+                    4593.770197855418
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 870,
+                "buildingId": 917
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1499.9043260061567,
+                    4258.263943913515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 871,
+                "buildingId": 297
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2202.659451917056,
+                    3456.928318795747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 872,
+                "buildingId": 297
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2202.659451917056,
+                    3327.781752937518
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 873,
+                "buildingId": 446
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2000.3032213302695,
+                    4184.061539506543
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 874,
+                "buildingId": 567
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1985.985052430187,
+                    4683.882031145004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 875,
+                "buildingId": 966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -981.7218378806529,
+                    4774.377841270679
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 876,
+                "buildingId": 411
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1670.937273533352,
+                    4186.622203455871
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 877,
+                "buildingId": 670
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1784.078473278472,
+                    4571.813634096875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 878,
+                "buildingId": 205
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1104.6810874856722,
+                    4468.581510395101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 879,
+                "buildingId": 930
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2198.792729602534,
+                    4271.178583140792
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 880,
+                "buildingId": 869
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2330.4222998927135,
+                    2982.861013084039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 881,
+                "buildingId": 243
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -911.019048928239,
+                    4853.786158585597
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 882,
+                "buildingId": 106
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1241.6483470328672,
+                    3722.01804223004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 883,
+                "buildingId": 17
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2148.436841916328,
+                    5261.788712538423
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 884,
+                "buildingId": 862
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1968.219929915483,
+                    3886.9152696618244
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 885,
+                "buildingId": 151
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2195.7632940592357,
+                    5124.807852313174
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 886,
+                "buildingId": 375
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -784.6236528229551,
+                    4863.66806749154
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 887,
+                "buildingId": 339
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1590.604526018032,
+                    4166.9915883892645
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 888,
+                "buildingId": 254
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1034.4629823865148,
+                    3711.3026228381386
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 889,
+                "buildingId": 917
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1590.4202895493163,
+                    4258.263943913515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 890,
+                "buildingId": 781
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2240.4913941583936,
+                    5198.567602243795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 891,
+                "buildingId": 205
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1089.9889021305112,
+                    4455.822342476473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1279,
+                "buildingId": 923
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -654.0366978538146,
+                    3632.0760648960236
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1280,
+                "buildingId": 489
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -501.42676062779447,
+                    3608.0722709059037
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1281,
+                "buildingId": 580
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -250.10250760487784,
+                    4857.0064836405545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1282,
+                "buildingId": 765
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -746.0297799695958,
+                    4008.345279959909
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1283,
+                "buildingId": 870
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2909.0282137217323,
+                    6510.130398749252
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1284,
+                "buildingId": 260
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -746.105838089235,
+                    5429.550547514793
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1285,
+                "buildingId": 595
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    170.74694042286592,
+                    4771.135720847398
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1286,
+                "buildingId": 715
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2724.188038485895,
+                    6717.649856866765
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1287,
+                "buildingId": 255
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.816781980895537,
+                    3582.204933328363
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1288,
+                "buildingId": 680
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -657.7838584306992,
+                    5932.81369824289
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1289,
+                "buildingId": 441
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3528.306824887696,
+                    4886.547525269254
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1290,
+                "buildingId": 755
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -625.2259566520925,
+                    4283.435087651933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1291,
+                "buildingId": 475
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2010.8517708960426,
+                    5283.76492656323
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1292,
+                "buildingId": 664
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -170.84228756724124,
+                    3790.7387811979065
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1293,
+                "buildingId": 333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1912.6667454275262,
+                    5288.50006673243
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1294,
+                "buildingId": 49
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -580.0171765817988,
+                    5936.726442233701
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1295,
+                "buildingId": 981
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -831.1509970580761,
+                    4313.035927387888
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1296,
+                "buildingId": 1016
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -826.2456539995576,
+                    5240.884421871655
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1297,
+                "buildingId": 775
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3255.070596103328,
+                    5479.41178070503
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1298,
+                "buildingId": 441
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3569.215604711074,
+                    4903.19250465635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1299,
+                "buildingId": 765
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -769.6207629156387,
+                    3991.9429115396124
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1300,
+                "buildingId": 561
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -251.55200766343,
+                    4701.616285011303
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1301,
+                "buildingId": 408
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2847.855610673995,
+                    6663.900855198909
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1302,
+                "buildingId": 76
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3532.3417312509846,
+                    5586.896700834855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1303,
+                "buildingId": 352
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -173.36434821207166,
+                    3690.962126114104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1304,
+                "buildingId": 410
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3325.5754177846347,
+                    5307.883074335268
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1305,
+                "buildingId": 64
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -416.1482587338951,
+                    5854.826833733975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1306,
+                "buildingId": 680
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -643.7038073647876,
+                    5917.381045442618
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1307,
+                "buildingId": 923
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -711.2265332697073,
+                    3649.718385741581
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1308,
+                "buildingId": 49
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -580.0171765817988,
+                    5936.726442233701
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1309,
+                "buildingId": 88
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3048.226902478323,
+                    6283.8148275615595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1310,
+                "buildingId": 434
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3061.6662672300545,
+                    5929.835547456925
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1311,
+                "buildingId": 401
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1730.46161795225,
+                    5925.860203271363
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1312,
+                "buildingId": 429
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -271.3160303970743,
+                    4985.574640487972
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1313,
+                "buildingId": 467
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -276.66830053571516,
+                    5125.990451518039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1314,
+                "buildingId": 410
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3366.855921141151,
+                    5265.173730073946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1315,
+                "buildingId": 156
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1275.0132591831693,
+                    5248.064077146062
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1316,
+                "buildingId": 1034
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    447.7528813037526,
+                    4446.320032225456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1317,
+                "buildingId": 588
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2616.4800271638437,
+                    6541.191811600034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1318,
+                "buildingId": 343
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -525.2895730956825,
+                    4289.093106712981
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1319,
+                "buildingId": 410
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3366.855921141151,
+                    5307.883074335268
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1320,
+                "buildingId": 284
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -840.6753278188867,
+                    5842.41531956319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1321,
+                "buildingId": 588
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2616.4800271638437,
+                    6497.734086456471
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1322,
+                "buildingId": 240
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1506.2062401757785,
+                    4764.893776885248
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1323,
+                "buildingId": 88
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3079.473260122901,
+                    6283.8148275615595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1324,
+                "buildingId": 486
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -525.2260085411027,
+                    4093.343371642296
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1325,
+                "buildingId": 969
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3565.1819079696543,
+                    6099.396253692319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1326,
+                "buildingId": 47
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3385.9171428962177,
+                    6106.353933788713
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1327,
+                "buildingId": 680
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -671.8639094966109,
+                    5917.381045442618
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1328,
+                "buildingId": 434
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3044.6480084760724,
+                    5950.665941497604
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1329,
+                "buildingId": 413
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3149.9034099651917,
+                    5907.34610112186
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1330,
+                "buildingId": 409
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -344.87724461848586,
+                    3683.020262283885
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1331,
+                "buildingId": 585
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -129.40600692752216,
+                    3983.3015893368247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1332,
+                "buildingId": 584
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -749.8180735661666,
+                    5847.491401868583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1333,
+                "buildingId": 333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1936.1772434479183,
+                    5280.458797272058
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1334,
+                "buildingId": 487
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2992.288271256545,
+                    6202.617103468241
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1335,
+                "buildingId": 489
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -459.47416762396665,
+                    3608.0722709059037
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1336,
+                "buildingId": 260
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -746.105838089235,
+                    5478.005756514865
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1337,
+                "buildingId": 269
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2488.0018597976323,
+                    5885.7340875007185
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1338,
+                "buildingId": 136
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.78279548948817,
+                    4702.886440892045
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1339,
+                "buildingId": 8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3257.563509525645,
+                    5415.033051466755
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1340,
+                "buildingId": 767
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -633.2986927355175,
+                    5354.847863423291
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1341,
+                "buildingId": 454
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1033.1767361471275,
+                    5766.179874318859
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1734,
+                "buildingId": 261
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3480.17040400516,
+                    6856.274228255146
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1735,
+                "buildingId": 749
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3837.636675203619,
+                    5492.86911075103
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1736,
+                "buildingId": 521
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3588.8792873039974,
+                    6178.752204471673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1737,
+                "buildingId": 1041
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4153.336133623585,
+                    5376.423146435112
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1738,
+                "buildingId": 627
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3796.1198513891923,
+                    6367.922072582076
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1739,
+                "buildingId": 1028
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3873.9638746980395,
+                    5651.680013350011
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1740,
+                "buildingId": 206
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3819.3395451914357,
+                    5136.905970442903
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1741,
+                "buildingId": 990
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3707.0822804277777,
+                    5086.911895550575
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1742,
+                "buildingId": 331
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3297.4064056514912,
+                    7156.152298524017
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1743,
+                "buildingId": 808
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3748.3766341391333,
+                    5264.252683412442
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1744,
+                "buildingId": 187
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3588.3242190090755,
+                    6798.416765323038
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1745,
+                "buildingId": 953
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3209.738139187618,
+                    6557.838945386657
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1746,
+                "buildingId": 912
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3973.0979051297536,
+                    5154.380353332814
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1747,
+                "buildingId": 37
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3697.997083892924,
+                    5406.876829329331
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1748,
+                "buildingId": 160
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3098.599452999811,
+                    6628.6729119697975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1749,
+                "buildingId": 932
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3221.2402871851464,
+                    6153.955275915399
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1750,
+                "buildingId": 686
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3285.6340071544328,
+                    6326.229707307784
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1751,
+                "buildingId": 604
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4515.907604161345,
+                    4631.612406745221
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1752,
+                "buildingId": 695
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3845.045732847575,
+                    5576.738358433912
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1753,
+                "buildingId": 807
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3472.3085856843627,
+                    6781.220179840805
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1754,
+                "buildingId": 261
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3455.755866902949,
+                    6846.648090702398
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1755,
+                "buildingId": 183
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3433.3865437851464,
+                    7828.19605341454
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1756,
+                "buildingId": 277
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3556.8182888817087,
+                    6641.646724169853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1757,
+                "buildingId": 949
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3741.432303349839,
+                    5162.439641767197
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1758,
+                "buildingId": 267
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3742.540064583217,
+                    5916.875246852485
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1759,
+                "buildingId": 305
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3699.8519673978653,
+                    6540.218682083818
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1760,
+                "buildingId": 543
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3210.355459657344,
+                    6648.152454626876
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1761,
+                "buildingId": 26
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3804.319468397756,
+                    5928.891714229324
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1762,
+                "buildingId": 543
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3195.7106978818483,
+                    6669.514454239059
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1763,
+                "buildingId": 160
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3136.1278958093117,
+                    6628.6729119697975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1764,
+                "buildingId": 932
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3233.0731689874065,
+                    6116.185085735686
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1765,
+                "buildingId": 277
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3556.8182888817087,
+                    6705.3104479782905
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1766,
+                "buildingId": 953
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3209.738139187618,
+                    6522.748316725878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1767,
+                "buildingId": 285
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3972.0306074440496,
+                    5494.63962663673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1768,
+                "buildingId": 627
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3837.722151176433,
+                    6367.922072582076
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1769,
+                "buildingId": 695
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3864.510743062192,
+                    5591.096494771966
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1770,
+                "buildingId": 627
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3796.1198513891923,
+                    6330.793189700022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1771,
+                "buildingId": 305
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3724.8780422091695,
+                    6559.417348100849
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1772,
+                "buildingId": 928
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4067.560404648976,
+                    6647.483016330907
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1773,
+                "buildingId": 877
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3823.49246369498,
+                    5777.21975219098
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1774,
+                "buildingId": 807
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3448.9410759401935,
+                    6764.519625514673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1775,
+                "buildingId": 28
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4150.694543856866,
+                    5079.325752156183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1776,
+                "buildingId": 714
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3968.209268500128,
+                    6628.224805854068
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1777,
+                "buildingId": 187
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3676.9008460947675,
+                    6798.416765323038
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1778,
+                "buildingId": 912
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3973.0979051297536,
+                    5074.196536201016
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1779,
+                "buildingId": 175
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4024.211498692567,
+                    5693.927626980997
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1780,
+                "buildingId": 583
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3626.9857811665415,
+                    6864.377979830607
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1781,
+                "buildingId": 261
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3480.17040400516,
+                    6856.274228255146
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1782,
+                "buildingId": 213
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3205.791803054025,
+                    7158.9906355191815
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1783,
+                "buildingId": 788
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3717.4879855839513,
+                    6703.2047004256
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1784,
+                "buildingId": 453
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4017.808180711095,
+                    6949.612770383012
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1785,
+                "buildingId": 129
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4597.345294446435,
+                    4632.743040664964
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1786,
+                "buildingId": 738
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3300.166421375523,
+                    6148.413135904235
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1787,
+                "buildingId": 714
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4002.9335312988205,
+                    6628.224805854068
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1788,
+                "buildingId": 183
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3463.167738075059,
+                    7836.545593061912
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1789,
+                "buildingId": 877
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3813.2913987997836,
+                    5750.038441232494
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1790,
+                "buildingId": 285
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3927.9102395808727,
+                    5570.155155320008
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1791,
+                "buildingId": 932
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3209.407405382886,
+                    6191.725466095112
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1792,
+                "buildingId": 877
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3833.6935285901764,
+                    5804.401063149466
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1793,
+                "buildingId": 738
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3313.211912858075,
+                    6185.8337275541235
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1794,
+                "buildingId": 802
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3786.373075235378,
+                    4999.485452069126
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1795,
+                "buildingId": 953
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3267.606054814424,
+                    6452.56705940432
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1796,
+                "buildingId": 1011
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3725.261225376805,
+                    6345.551342169127
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "employerId": 1797,
+                "buildingId": 949
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3759.480918044369,
+                    5179.602735764589
+                ]
+            }
+        }
+    ]
+}

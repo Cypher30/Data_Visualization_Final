@@ -96,8 +96,6 @@ if __name__ == "__main__":
 
     # get location attribute
     loc_attr = next(filter(lambda x: x in ["location", "currentLocation"], attributes), None)
-    if loc_attr is None:
-        raise ValueError("Cannot find location attribute in the data.")
 
     # iterate over each row
     for i in tqdm(range(len(df))):
@@ -110,7 +108,8 @@ if __name__ == "__main__":
             else:
                 properties.update({attr: df.loc[i][attr]})
         feature.update({"properties": properties})
-        feature.update({"geometry": generate_geo_data(df, i, loc_attr)})
+        if loc_attr is not None:
+            feature.update({"geometry": generate_geo_data(df, i, loc_attr)})
 
         geo_data["features"].append(feature)
 

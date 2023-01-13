@@ -1,0 +1,69 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "schoolId": 0,
+                "monthlyCost": 12.81244502,
+                "maxEnrollment": 242,
+                "buildingId": 662
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -376.7505037068263,
+                    1607.9843212558562
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "schoolId": 450,
+                "monthlyCost": 91.14351385,
+                "maxEnrollment": 418,
+                "buildingId": 943
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2597.447677094323,
+                    3194.1547530883445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "schoolId": 900,
+                "monthlyCost": 38.00537955,
+                "maxEnrollment": 394,
+                "buildingId": 262
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2539.1584040534744,
+                    6556.0323181733565
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "schoolId": 1350,
+                "monthlyCost": 73.19785215,
+                "maxEnrollment": 384,
+                "buildingId": 123
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4701.462928834322,
+                    5141.762936081409
+                ]
+            }
+        }
+    ]
+}

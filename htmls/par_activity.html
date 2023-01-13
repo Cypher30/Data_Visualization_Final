@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map</title>
+    <script src="d3.js"></script>
+    <!-- <script src="http://d3js.org/d3.v6.js"></script> -->
+<style>
+    .tooltip {
+      position: absolute;
+      padding: 7px;
+      font-size: 0.9em;
+      pointer-events: none;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      /* 添加阴影效果 */
+      -moz-box-shadow:    3px 3px 10px 0px rgba(0, 0, 0, 0.25);
+      -webkit-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.25);
+      box-shadow:         3px 3px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+    .tooltip p {
+      margin: 0;
+      padding: 0;
+    }
+    .tooltip table {
+      margin: 0;
+      padding: 0;
+      border-collapse: collapse;
+    }
+/*  set buildingGroup attribute */
+    .buildingGroup {
+        pointer-events: none;
+    }
+    .participantGroup {
+        pointer-events: none;
+    }
+</style>
+    
+</head>
+
+<body>
+    <h1> Participant activity visualization</h1>
+    <h2 class="date"></h2>
+    <div class="slider"></div>
+    <svg width="2000", height="2000" id="mainsvg" class="svgs" style='display: block; margin: 0 auto;'></svg>
+    <script>
+        // tool tip initialize
+        console.log("Hello world!")
+        let tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        // initialize svg
+        const mainsvg = d3.select("svg")
+        const width = mainsvg.attr('width');
+        const height = mainsvg.attr('height');
+        const margin = { top: 100, right: 100, bottom: 100, left: 100};
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+
+        // initilaize svg1
+        const svg1 = mainsvg.append('g')
+            .attr('transform', `translate(${margin.left}, ${margin.top})`)
+            .attr('id', 'svg1');
+
+        const width1 = 750;
+        const height1 = 750;
+
+        // initialize participant activity group
+        const parGroup1 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'parGroup')
+            .attr('class', 'participantGroup');
+
+        const parGroup2 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'parGroup')
+            .attr('class', 'participantGroup');
+
+        // initialize building group
+        const buildingGroup1 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'buildingGroup')
+            .attr('class', 'buildingGroup');
+
+        // initialize apartment group
+        const apartmentGroup1 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'apartmentGroup');
+
+        const apartmentGroup2 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'apartmentGroup');
+
+        // initialize employer group
+        const employerGroup1 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'employerGroup');
+
+        const employerGroup2 = svg1.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'employerGroup');
+
+        // initialize label group
+        const labelGroup1 = svg1.append('g')
+        .attr('transform', `translate(0, 0)`)
+        .attr('id', 'labelGroup');
+
+        const homelabelGroup1 = svg1.append('g')
+        .attr('transform', `translate(0, 0)`)
+        .attr('id', 'homelabelGroup');
+
+        const worklabelGroup1 = svg1.append('g')
+        .attr('transform', `translate(0, 0)`)
+        .attr('id', 'worklabelGroup');
+
+        // initialize scale
+        const xScale1 = d3.scaleLinear();
+        const yScale1 = d3.scaleLinear();
+
+        // color scales
+        // activity circle color scale to discriminate participant
+        const actColorScale1 = d3.scaleOrdinal(d3.schemeDark2).domain(["par_0", "par_30"]);
+
+        // building color scale to discriminate different type of building
+        const buildingColorScale1 = d3.scaleOrdinal();
+
+        // draw buildings
+        d3.json('./data/Attributes/Buildings.json').then(data => {
+            var features = data.features;
+            var coor_data = [];
+
+            // set x y axis
+            xScale1.domain([d3.min(features, d => d3.min(d.geometry.coordinates, d => +d[0])) - 100, d3.max(features, d => d3.max(d.geometry.coordinates, d => +d[0])) + 100])
+                .range([0, width1]);
+            yScale1.domain([d3.min(features, d => d3.min(d.geometry.coordinates, d => +d[1])) - 100, d3.max(features, d => d3.max(d.geometry.coordinates, d => +d[1])) + 100])
+                .range([height1, 0]);
+
+            // set color scale
+            buildingColorScale1.domain(features.map(d => d.properties.buildingType)).range(d3.schemeCategory10);
+
+            // draw map
+            var line = d3.line();
+            buildingGroup1.selectAll('path').data(features).join('path')
+                .attr('class', name)
+                .attr('fill', d => buildingColorScale1(d.properties.buildingType))
+                .attr('d', function(d) {
+                    var coor_data = [];
+                    d.geometry.coordinates.forEach(function(d) {
+                        coor_data.push([xScale1(+d[0]), yScale1(+d[1])]);
+                    });
+
+                    return line(coor_data);
+                })
+                .attr('stroke', 'black')
+                .attr('stroke-width', '1px')
+                .attr('opacity', 0.25)
+
+            // draw label from color scale
+            labelGroup1.selectAll('rect').data(buildingColorScale1.domain()).join('rect')
+                .attr('x', (d, i) => xScale1(d3.max(xScale1.domain()) - 200))
+                .attr('y', (d, i) => yScale1(d3.min(yScale1.domain()) + i * 200))
+                .attr('width', 10)
+                .attr('height', 10)
+                .attr('fill', d => buildingColorScale1(d))
+                .attr('opacity', 0.25);
+
+            labelGroup1.selectAll('text').data(buildingColorScale1.domain()).join('text')
+                .attr('x', (d, i) => xScale1(d3.max(xScale1.domain()) - 200) + 15)
+                .attr('y', (d, i) => yScale1(d3.min(yScale1.domain()) + i * 200) + 10)
+                .text(d => d);
+
+            
+            // draw d3 symbol star for home
+            homelabelGroup1.append('path').attr('d', d3.symbol().type(d3.symbolStar).size(200))
+                .attr('transform', `translate(${xScale1(d3.max(xScale1.domain()) - 200) + 5}, ${yScale1(d3.min(yScale1.domain()) + 1500)})`)
+                .attr('fill', actColorScale1('par_0'))
+                .attr('opacity', 0.6);
+
+            homelabelGroup1.append('text')
+                .attr('x', xScale1(d3.max(xScale1.domain()) - 200) + 20)
+                .attr('y', yScale1(d3.min(yScale1.domain()) + 1500) + 5)
+                .text('par_0 home');
+
+            homelabelGroup1.append('path').attr('d', d3.symbol().type(d3.symbolStar).size(200))
+                .attr('transform', `translate(${xScale1(d3.max(xScale1.domain()) - 200) + 5}, ${yScale1(d3.min(yScale1.domain()) + 1200)})`)
+                .attr('fill', actColorScale1('par_30'))
+                .attr('opacity', 0.6);
+
+            homelabelGroup1.append('text')
+                .attr('x', xScale1(d3.max(xScale1.domain()) - 200) + 20)
+                .attr('y', yScale1(d3.min(yScale1.domain()) + 1200) + 5)
+                .text('par_30 home');
+
+            // draw d3 symbol cross for work
+            worklabelGroup1.append('path').attr('d', d3.symbol().type(d3.symbolCross).size(200))
+                .attr('transform', `translate(${xScale1(d3.max(xScale1.domain()) - 200) + 5}, ${yScale1(d3.min(yScale1.domain()) + 900)})`)
+                .attr('fill', actColorScale1('par_0'))
+                .attr('opacity', 0.6);
+
+            worklabelGroup1.append('text')
+                .attr('x', xScale1(d3.max(xScale1.domain()) - 200) + 20)
+                .attr('y', yScale1(d3.min(yScale1.domain()) + 900) + 5)
+                .text('par_0 employer');
+
+            worklabelGroup1.append('path').attr('d', d3.symbol().type(d3.symbolCross).size(200))
+                .attr('transform', `translate(${xScale1(d3.max(xScale1.domain()) - 200) + 5}, ${yScale1(d3.min(yScale1.domain()) + 600)})`)
+                .attr('fill', actColorScale1('par_30'))
+                .attr('opacity', 0.6);
+            
+            worklabelGroup1.append('text')
+                .attr('x', xScale1(d3.max(xScale1.domain()) - 200) + 20)
+                .attr('y', yScale1(d3.min(yScale1.domain()) + 600) + 5)
+                .text('par_30 employer');
+        }
+        );
+
+
+        // initialize svg2
+        const svg2 = mainsvg.append('g')
+            .attr('transform', `translate(${1000 + margin.left}, ${margin.top})`)
+            .attr('id', 'svg2'); 
+
+        const width2 = 750;
+        const height2 = 350;
+
+        // create available balance line groups
+        const balancelineGroup1 = svg2.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'balancelineGroup1');
+
+        const balancelineGroup2 = svg2.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'balancelineGroup2');
+
+        // create balance circle groups
+        const balancecircleGroup1 = svg2.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'balancecircleGroup1');
+
+        const balancecircleGroup2 = svg2.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'balancecircleGroup2');
+
+        // create label group
+        const labelGroup2 = svg2.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'labelGroup2');
+
+        // create xScale2 yScale2
+        const xScale2 = d3.scaleTime();
+        const yScale2 = d3.scaleLinear();
+
+        // color scale
+        const colorScale2 = d3.scaleOrdinal(d3.schemeDark2).domain(['par_0', 'par_30']);
+
+        // draw availableBalance of participant 1 according to time
+        d3.json("./data/Activity_Logs/par_0.json").then(data => {
+            var features = data.features;
+
+            // create xScale2
+            xScale2.domain(d3.extent(features, d => new Date(d.properties.timestamp)))
+                .range([0, width2]);
+
+            // create yScale2
+            yScale2.domain([-750, d3.max(features, d => d.properties.availableBalance)])
+                .range([height2, 0]);
+            
+            // create xAxis1 yAxis1
+            const xAxis1 = d3.axisBottom(xScale2).ticks(0).tickFormat(function(d) {
+                return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+            });
+            const yAxis1 = d3.axisLeft(yScale2);
+
+            // create xAxisGroup1 yAxisGroup1
+            const xAxisGroup1 = svg2.append('g').attr('id', 'xAxisGroup').call(xAxis1)
+                .attr('transform', `translate(0, ${height2})`);
+            const yAxisGroup1 = svg2.append('g').attr('id', 'yAxisGroup').call(yAxis1);
+
+            xAxisGroup1.append('text').attr('class', 'axisTitle')
+                .attr('x', width2 / 2).attr('y', 20);
+            yAxisGroup1.append('text').attr('class', 'axisTitle').text('available balance')
+                .attr('transform', 'rotate(-90)').attr('x', -height2 / 2 - 50).attr('y', -60); 
+            d3.selectAll('.tick text').attr('font-size', '1.2em')
+            d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em');
+
+            // draw line
+            var line = d3.line()
+                .x(d => xScale2(new Date(d.properties.timestamp)))
+                .y(d => yScale2(d.properties.availableBalance));
+
+            balancelineGroup1.append('path')
+                .datum(features)
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', colorScale2('par_0'))
+                .attr('stroke-width', 1.5)
+                .attr("opacity", 0.5);
+        }
+        );
+
+        // draw availableBalance of participant 2 according to time
+        d3.json("./data/Activity_Logs/par_30.json").then(data => {
+            var features = data.features;
+
+            // draw line
+            var line = d3.line()
+                .x(d => xScale2(new Date(d.properties.timestamp)))
+                .y(d => yScale2(d.properties.availableBalance));
+
+            balancelineGroup2.append('path')
+                .datum(features)
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', colorScale2('par_30'))
+                .attr('stroke-width', 1.5)
+                .attr('opacity', 0.5);
+        }
+        );
+
+        // initialize svg3
+        const svg3 = mainsvg.append('g')
+            .attr('transform', `translate(${1000 + margin.left}, ${400 + margin.top})`)
+            .attr('id', 'svg3');
+
+        const width3 = 750;
+        const height3 = 350;
+
+        // initialize extra budget line group
+        const extrabudgetlineGroup1 = svg3.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'extrabudgetlineGroup1');
+        
+        const extrabudgetlineGroup2 = svg3.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'extrabudgetlineGroup2');
+
+        // create extra budget circle groups
+        const extrabudgetGroup1 = svg3.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'extrabudgetGroup1');
+
+        const extrabudgetGroup2 = svg3.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'extrabudgetGroup2');
+
+        // create label group
+        const labelGroup3 = svg3.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'labelGroup3');
+
+        // draw label
+        labelGroup3.selectAll('rect').data(colorScale2.domain()).join('rect')
+                .attr('x', (d, i) => width2 + 50)
+                .attr('y', (d, i) => height2 - 100 + i * 20)
+                .attr('width', 10)
+                .attr('height', 10)
+                .attr('fill', d => colorScale2(d))
+                .attr('opacity', 0.5);
+
+        labelGroup3.selectAll('text').data(colorScale2.domain()).join('text')
+            .attr('x', (d, i) => width2 + 75)
+            .attr('y', (d, i) => height2 - 90 + i * 20)
+            .text(d => d);
+
+        // create xScale2 yScale2
+        const xScale3 = d3.scaleTime();
+        const yScale3 = d3.scaleLog();
+
+        // color scale
+        const colorScale3 = d3.scaleOrdinal(d3.schemeDark2).domain(['par_0', 'par_30']);
+
+        // draw weeklyExtraBudget of participant 1 according to time
+        d3.json("./data/Activity_Logs/par_0.json").then(data => {
+            var features = data.features;
+
+            // create xScale3
+            xScale3.domain(d3.extent(features, d => new Date(d.properties.timestamp)))
+                .range([0, width3]);
+
+            // create yScale3
+            yScale3.domain([1, 17000])
+                .range([height3, 0]);
+
+            // create xAxis2 yAxis2
+            const xAxis2 = d3.axisBottom(xScale3).ticks(0).tickFormat(function(d) {
+                return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+            });
+            // log tick format
+            const yAxis2 = d3.axisLeft(yScale3).ticks(2).tickFormat(function(d) {
+                return d3.format('.2s')(d);
+            });
+
+            // create xAsixGroup2 yAxisGroup2
+            const xAxisGroup2 = svg3.append('g')
+                .attr('transform', `translate(0, ${height3})`)
+                .call(xAxis2);
+            const yAxisGroup2 = svg3.append('g')
+                .call(yAxis2);
+
+            xAxisGroup2.append('text').attr('class', 'axisTitle')
+                .attr('x', width3 / 2).attr('y', 20);
+            yAxisGroup2.append('text').attr('class', 'axisTitle').text('weekly extra budget')
+                .attr('transform', 'rotate(-90)').attr('x', -height3 / 2 - 50).attr('y', -50); 
+            d3.selectAll('.tick text').attr('font-size', '1.2em')
+            d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em');
+
+            // draw line
+            var line = d3.line()
+                .x(d => xScale3(new Date(d.properties.timestamp)))
+                .y(d => yScale3(d.properties.weeklyExtraBudget) + 1);
+
+            extrabudgetlineGroup1.append('path')
+                .datum(features)
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', colorScale3('par_0'))
+                .attr('stroke-width', 1.5)
+                .attr('opacity', 0.5);
+        }
+        );
+
+        // draw weeklyExtraBudget of participant 2 according to time
+        d3.json("./data/Activity_Logs/par_30.json").then(data => {
+            var features = data.features;
+
+            // draw line
+            var line = d3.line()
+                .x(d => xScale3(new Date(d.properties.timestamp)))
+                .y(d => yScale3(d.properties.weeklyExtraBudget + 1));
+
+            extrabudgetlineGroup2.append('path')
+                .datum(features)
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', colorScale3('par_30'))
+                .attr('stroke-width', 1.5)
+                .attr('opacity', 0.5);
+        }
+        );
+
+        // initialize svg4
+        const svg4 = mainsvg.append('g')
+            .attr('transform', `translate(${margin.left}, ${900 + margin.top})`)
+            .attr('id', 'svg4');
+
+        const width4 = 750;
+        const height4 = 750;
+
+        // initialize financial symbol group
+        const financialGroup1 = svg4.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'financialGroup1');
+        
+        const financialGroup2 = svg4.append('g')
+            .attr('transform', `translate(0, 0)`)
+            .attr('id', 'financialGroup2');
+
+        // initialize financial pie group
+        const financialPieGroup1 = svg4.append('g')
+            .attr('transform', `translate(${width4 / 2 + 150}, 0)`)
+            .attr('id', 'financialPieGroup1');
+        
+        const financialPieGroup2 = svg4.append('g')
+            .attr('transform', `translate(${width4 / 2 + 150}, ${height4 / 2 + 50})`)
+            .attr('id', 'financialPieGroup2');
+
+        // initialize label group
+        const labelGroup4 = svg4.append('g')
+            .attr('transform', `translate(${width4 / 2}, ${height4 - 100})`)
+            .attr('id', 'labelGroup4');
+
+        // initialize xScale4 yScale4 for financial journal of participant 1
+        const xScale4 = d3.scaleTime();
+        const yScale4 = d3.scaleLinear();
+
+        // construct yAxisGroup3
+        d3.json("./data/Journals/FinancialJournal_0.json").then(data => {
+            var features = data.features;
+
+            // create yScale4
+            yScale4.domain([d3.min(features, d => d.properties.amount) - 10, d3.max(features, d => d.properties.amount) + 10])
+                .range([height4 / 2 - 50, 0]);
+            
+            const yAxis3 = d3.axisLeft(yScale4).ticks(5);
+
+            const yAxisGroup3 = svg4.append('g').attr('id', 'yAxisGroup3').call(yAxis3);
+            
+            yAxisGroup3.append('text').attr('class', 'axisTitle').text('financial amount par_0')
+                    .attr('transform', 'rotate(-90)').attr('x', -height4 / 4).attr('y', -60); 
+            d3.selectAll('.tick text').attr('font-size', '1.2em')
+            d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em'); 
+        }
+        );
+
+        // initialize xScale5 yScale5 for financial journal of participant 2
+        const xScale5 = d3.scaleTime();
+        const yScale5 = d3.scaleLinear();
+
+        // construct yAxisGroup3
+        d3.json("./data/Journals/FinancialJournal_30.json").then(data => {
+            var features = data.features;
+
+            // create yScale5
+            yScale5.domain([d3.min(features, d => d.properties.amount) - 10, d3.max(features, d => d.properties.amount) + 10])
+                .range([height4, height4 / 2 + 50]);
+            
+            const yAxis4 = d3.axisLeft(yScale5).ticks(5);
+
+            const yAxisGroup4 = svg4.append('g').attr('id', 'yAxisGroup4').call(yAxis4);
+            
+            yAxisGroup4.append('text').attr('class', 'axisTitle').text('financial amount par_30')
+                    .attr('transform', 'rotate(-90)').attr('x', -height4 * 3 / 4 - 50).attr('y', -60); 
+            d3.selectAll('.tick text').attr('font-size', '1.2em')
+            d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em'); 
+        }
+        );
+
+        // color scale
+        const colorScale4 = d3.scaleOrdinal(d3.schemeSet2).domain(['Education', 'Food', 'Recreation', 'RentAdjustment', 'Shelter', 'Wage']);  
+
+        // draw label according to colorScale4
+        labelGroup4.selectAll('rect').data(colorScale4.domain()).enter().append('rect')
+            .attr('x', 50)
+            .attr('y', (d, i) => i * 20)
+            .attr('width', 15)
+            .attr('height', 15)
+            .attr('fill', d => colorScale4(d));
+
+        labelGroup4.selectAll('text').data(colorScale4.domain()).enter().append('text')
+            .attr('x', 70)
+            .attr('y', (d, i) => i * 20 + 12)
+            .text(d => d)
+            .attr('font-size', '1.2em');
+
+        // draw financial pie chart of participant 1
+        d3.json("./data/Journals/FinancialJournal_0.json").then(data => {
+            var features = data.features;
+
+            // initialize amount collector of each category except `Wage` and `RentAdjustment`
+            var amountCollector = [
+                {category: 'Education', value: 0},
+                {category: 'Food', value: 0},
+                {category: 'Recreation', value: 0},
+                {category: 'Shelter', value: 0}
+            ]
+
+            // update amount collector
+            features.forEach(d => {
+                if (d.properties.category != 'Wage') {
+                    amountCollector.forEach(e => {
+                        if (d.properties.category == e.category) {
+                            e.value -= d.properties.amount;
+                        }
+                    })
+                }
+            })
+
+            // draw pie chart
+            const pie = d3.pie().value(d => d.value);
+            const arc = d3.arc().innerRadius(0).outerRadius(150)
+
+            financialPieGroup1.selectAll('path').data(pie(amountCollector)).enter().append('path')
+                .attr('d', arc)
+                .attr('fill', d => colorScale4(d.data.category))
+                .attr('stroke', 'white')
+                .attr('stroke-width', 2)
+                .attr('opacity', 0.75)
+                .attr('transform', `translate(${width4 / 4}, ${height4 / 4})`)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).attr('opacity', 1);
+
+                    // show tooltip
+                    tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                    // show category and value 
+                    tooltip.html(d.data.category + ': ' + d.data.value.toFixed(2))
+                            .style("left", (event.pageX) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                })
+                .on('mouseout', function(event, d) {
+                    d3.select(this).attr('opacity', 0.75);
+
+                    // hide tooltip
+                    tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                });
+
+            // add title
+            financialPieGroup1.append('text').text('financial summary par_0')
+                .attr('x', width4 / 4)
+                .attr('text-anchor', 'middle')
+                .attr('font-size', '1.5em');
+        }
+        );
+
+        // draw financial pie chart of participant 2
+        d3.json("./data/Journals/FinancialJournal_30.json").then(data => {
+            var features = data.features;
+
+            // initialize amount collector of each category except `Wage` and `RentAdjustment`
+            var amountCollector = [
+                {category: 'Education', value: 0},
+                {category: 'Food', value: 0},
+                {category: 'Recreation', value: 0},
+                {category: 'Shelter', value: 0}
+            ]
+
+            // update amount collector
+            features.forEach(d => {
+                if (d.properties.category != 'Wage') {
+                    amountCollector.forEach(e => {
+                        if (d.properties.category == e.category) {
+                            e.value -= d.properties.amount;
+                        }
+                    })
+                }
+            })
+
+            // draw pie chart
+            const pie = d3.pie().value(d => d.value);
+            const arc = d3.arc().innerRadius(0).outerRadius(150)
+
+            financialPieGroup2.selectAll('path').data(pie(amountCollector)).enter().append('path')
+                .attr('d', arc)
+                .attr('fill', d => colorScale4(d.data.category))
+                .attr('opacity', 0.75)
+                .attr('stroke', 'white')
+                .attr('stroke-width', 2)
+                .attr('transform', `translate(${width4 / 4}, ${height4 / 4})`)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).attr('opacity', 1);
+
+                    // show tooltip
+                    tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                    // show category and value 
+                    tooltip.html(d.data.category + ': ' + d.data.value.toFixed(2))
+                            .style("left", (event.pageX) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                })
+                .on('mouseout', function(event, d) {
+                    d3.select(this).attr('opacity', 0.75);
+
+                    // hide tooltip
+                    tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                });
+            
+            // add title
+            financialPieGroup2.append('text').text('financial summary par_30')
+                .attr('x', width4 / 4)
+                .attr('text-anchor', 'middle')
+                .attr('font-size', '1.5em');
+        }
+        );
+
+        // initialize svg4
+        const svg5 = mainsvg.append('g')
+            .attr('transform', `translate(${900 + margin.left}, ${900 + margin.top})`)
+            .attr('id', 'svg5');
+
+        svg5.append('text').text('sleep status and current mode')
+            .attr('x', 400)
+            .attr('y', -75)
+            .attr('font-size', '1.5em')
+            .attr('text-anchor', 'middle')
+
+        const width5 = 750;
+        const height5 = 750;
+
+        // initialize sleep status bar group
+        const sleepStatusBarGroup1 = svg5.append('g')
+            .attr('transform', `translate(${margin.left}, -50)`)
+            .attr('id', 'sleepStatusBarGroup1');
+
+        const sleepStatusBarGroup2 = svg5.append('g')
+            .attr('transform', `translate(${margin.left}, -50)`)
+            .attr('id', 'sleepStatusBarGroup2');
+
+        // initialize currentMode bar group
+        const currentModeBarGroup1 = svg5.append('g')
+            .attr('transform', `translate(${margin.left}, ${height5 / 2 + 50})`)
+            .attr('id', 'currentModeBarGroup1');
+        
+        const currentModeBarGroup2 = svg5.append('g')
+            .attr('transform', `translate(${margin.left}, ${height5 / 2 + 50})`)
+            .attr('id', 'currentModeBarGroup2');
+
+        // initialize xScale6 and yScale6 for sleepStatus
+        const xScale6 = d3.scaleLinear().domain([0, 17]).range([0, width5]);
+        const yScale6 = d3.scaleBand().domain(['Sleeping', 'PrepareToSleep', 'Awake']).range([0, height5 / 2]).padding(0.1);
+
+        // initialize xScale7 and yScale7 for currentMode
+        const xScale7 = d3.scaleLinear().domain([0, 24]).range([0, width5]);
+        const yScale7 = d3.scaleBand().domain(["AtHome", "Transport", "AtRecreation", "AtRestaurant", "AtWork"]).range([0, height5 / 2]).padding(0.1);
+
+        // construct xAxis5 and yAxis5
+        const xAxis5 = d3.axisBottom(xScale6).ticks(5);
+        const yAxis5 = d3.axisLeft(yScale6);
+
+        // create xAxisGroup4
+        const xAxisGroup4 = svg5.append('g').attr('id', 'xAxisGroup3').call(xAxis5)
+            .attr('transform', `translate(${margin.left}, ${height5 / 2 - 50})`);
+
+        xAxisGroup4.append('text').attr('class', 'axisTitle').text('Hours')
+            .attr('x', width2 / 2).attr('y', 40);
+
+        // create yAxisGroup4
+        const yAxisGroup4 = svg5.append('g').attr('id', 'yAxisGroup3').call(yAxis5)
+            .attr('transform', `translate(${margin.left}, -50)`);
+         
+        // construct xAxis6 and yAxis6
+        const xAxis6 = d3.axisBottom(xScale7).ticks(2).tickFormat(d3.format('.2s'));
+        const yAxis6 = d3.axisLeft(yScale7);
+
+        // create xAxisGroup5
+        const xAxisGroup5 = svg5.append('g').attr('id', 'xAxisGroup4').call(xAxis6)
+            .attr('transform', `translate(${margin.left}, ${height5 + 50})`);
+        
+        xAxisGroup5.append('text').attr('class', 'axisTitle').text('Hours')
+            .attr('x', width2 / 2).attr('y', 40);
+        
+        // create yAxisGroup5
+        const yAxisGroup5 = svg5.append('g').attr('id', 'yAxisGroup4').call(yAxis6)
+            .attr('transform', `translate(${margin.left}, ${height5 / 2 + 50})`);
+
+        d3.selectAll('.tick text').attr('font-size', '1.2em')
+        d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em'); 
+        
+     
+        // initialize color scale
+        const colorScale5 = d3.scaleOrdinal(d3.schemeSet1).domain(['Awake', 'PrepareToSleep', 'Sleeping']);
+        const colorScale6 = d3.scaleOrdinal(d3.schemeTableau10).domain(["AtHome", "Transport", "AtRecreation", "AtRestaurant", "AtWork"])
+
+        // initialize label group
+        const labelGroup5 = svg5.append('g').attr('id', 'labelGroup5')
+            .attr('transform', `translate(${width5 + 130}, 0)`);
+        const labelGroup6 = svg5.append('g').attr('id', 'labelGroup6')
+            .attr('transform', `translate(${width5 + 130}, ${height5 / 2 + 50})`);
+
+        // draw label
+        labelGroup5.selectAll('rect').data(colorScale5.domain()).enter().append('rect')
+            .attr('x', 0).attr('y', (d, i) => i * 30)
+            .attr('width', 20).attr('height', 20)
+            .attr('fill', d => colorScale5(d));
+
+        labelGroup5.selectAll('text').data(colorScale5.domain()).enter().append('text')
+            .attr('x', 30).attr('y', (d, i) => i * 30 + 15)
+            .attr('font-size', '1.0em').text(d => d);
+
+        labelGroup6.selectAll('rect').data(colorScale6.domain()).enter().append('rect')
+            .attr('x', 0).attr('y', (d, i) => i * 30)
+            .attr('width', 20).attr('height', 20)
+            .attr('fill', d => colorScale6(d));
+        
+        labelGroup6.selectAll('text').data(colorScale6.domain()).enter().append('text')
+            .attr('x', 30).attr('y', (d, i) => i * 30 + 15)
+            .attr('font-size', '1.0em').text(d => d); 
+        
+        // function to remove offset of current time
+        function removeOffset(date) {
+            var offset = date.getTimezoneOffset();
+            date.setTime(date.getTime() + offset * 60 * 1000);
+            return date;
+        }
+
+        // function to apply offset of current time
+        function applyOffset(date) {
+            var offset = date.getTimezoneOffset();
+            date.setTime(date.getTime() - offset * 60 * 1000);
+            return date;
+        }
+ 
+        // function to update activity according to slider date
+        function updateActivity(date) {
+            // draw participant 1 activity
+            d3.json('./data/Activity_Logs/par_0.json').then(data => {
+                // filter data according to date
+                var features = data.features.filter(d => {
+                    var date1 = removeOffset(new Date(d.properties.timestamp));
+                    
+                    return date1.getFullYear() == date.getFullYear() && date1.getMonth() == date.getMonth() && date1.getDate() == date.getDate();
+                });
+
+                // draw apartment according to features[0] with d3 symbolStar
+                var apartment1 = [features[0].properties.apartment];
+                apartmentGroup1.selectAll('path')
+                    .data(apartment1)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolStar).size(200))
+                    .attr('transform', d => `translate(${xScale1(+d.geometry.coordinates[0])}, ${yScale1(+d.geometry.coordinates[1])})`)
+                    .attr('fill', actColorScale1("par_0"))
+                    .attr('opacity', 0.6)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", "lightblue");
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show apartmentId, apartmentType, maxOccupancy
+                        tooltip.html("<p>apartmentId: " + d.properties.apartmentId + "</p>" +
+                            "<p>rentalCost: " + d.properties.rentalCost + "</p>")
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", actColorScale1("par_0"));
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // draw job according to features[0] with d3 symbolCross
+                var employer1 = [features[0].properties];
+                employerGroup1.selectAll('path')
+                    .data(employer1)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolCross).size(200))
+                    .attr('transform', d => `translate(${xScale1(+d.employer.geometry.coordinates[0])}, ${yScale1(+d.employer.geometry.coordinates[1])})`)
+                    .attr('fill', actColorScale1("par_0"))
+                    .attr('opacity', 0.6)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", "lightblue");
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show hourlyRate, startTime, endTime, daysToWork, educationRequirement
+                        tooltip.html("<p>hourlyRate: " + d.job.properties.hourlyRate + "</p>" +
+                            "<p>startTime: " + d.job.properties.startTime + "</p>" +
+                            "<p>endTime: " + d.job.properties.endTime + "</p>" +
+                            "<p>daysToWork: " + d.job.properties.daysToWork + "</p>" +
+                            "<p>educationRequirement: " + d.job.properties.educationRequirement + "</p>")
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", actColorScale1("par_0"));
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // plot each coordinate on parGroup1 with d3 symbolCircle
+                parGroup1.selectAll('path')
+                    .data(features)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolCircle).size(20))
+                    .attr('transform', d => `translate(${xScale1(+d.geometry.coordinates[0])}, ${yScale1(+d.geometry.coordinates[1])})`)
+                    .attr('fill', actColorScale1("par_0"))
+                    .attr('opacity', 1);
+
+                // draw balance circle
+                balancecircleGroup1.selectAll('circle').data(features).join('circle')
+                    .attr('cx', d => xScale2(new Date(d.properties.timestamp)))
+                    .attr('cy', d => yScale2(d.properties.availableBalance))
+                    .attr('r', 2)
+                    .attr('fill', colorScale2('par_0'))
+                    .attr('opacity', 1);
+
+                // draw weeklyExtraBudget circle
+                extrabudgetGroup1.selectAll('circle').data(features).join('circle')
+                    .attr('cx', d => xScale3(new Date(d.properties.timestamp)))
+                    .attr('cy', d => yScale3(d.properties.weeklyExtraBudget + 1))
+                    .attr('r', 2)
+                    .attr('fill', colorScale3('par_0'))
+                    .attr('opacity', 1);
+
+                // initialize sleepStatus amount collector
+                var sleepStatusAmount = [
+                    { "status": "Sleeping", "amount": 0 },
+                    { "status": "Awake", "amount": 0 },
+                    { "status": "PrepareToSleep", "amount": 0 },
+                ];
+
+                // update sleepStatusAmount according to features
+                features.forEach(d => {
+                    if (d.properties.sleepStatus == "Sleeping") {
+                        sleepStatusAmount[0].amount += 1;
+                    } else if (d.properties.sleepStatus == "Awake") {
+                        sleepStatusAmount[1].amount += 1;
+                    } else if (d.properties.sleepStatus == "PrepareToSleep") {
+                        sleepStatusAmount[2].amount += 1;
+                    }
+                });
+
+                // draw sleepStatus bar chart
+                sleepStatusBarGroup1.selectAll('rect').data(sleepStatusAmount).join('rect')
+                    .attr('x', 0)
+                    .attr('y', d => yScale6(d.status))
+                    .attr('width', d => xScale6(d.amount / 6))
+                    .attr('height', 40)
+                    .attr('fill', d => colorScale5(d.status))
+                    .attr('opacity', 0.75)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 1);
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show sleepStatus amount
+                        tooltip.html("<p>status: " + d.status + "</p>" +
+                            "<p>amount: " + (d.amount / 6).toFixed(2) + " hours" + "</p>") 
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 0.75);
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // apend text to sleepStatusBarGroup1
+                sleepStatusBarGroup1.selectAll('text').data(sleepStatusAmount).join('text')
+                    .attr('x', d => xScale6(d.amount / 6) + 5)
+                    .attr('y', d => yScale6(d.status) + 25)
+                    .attr('fill', 'black')
+                    .attr('font-size', 12)
+                    .text("par_0");
+
+                // initialize currentMode amount collector
+                var currentModeAmount = [
+                    { "mode": "AtHome", "amount": 0 },
+                    { "mode": "Transport", "amount": 0 },
+                    { "mode": "AtRecreation", "amount": 0 },
+                    { "mode": "AtRestaurant", "amount": 0 },
+                    { "mode": "AtWork", "amount": 0 },
+                ];
+
+                // update currentModeAmount according to features
+                features.forEach(d => {
+                    if (d.properties.currentMode == "AtHome") {
+                        currentModeAmount[0].amount += 1;
+                    } else if (d.properties.currentMode == "Transport") {
+                        currentModeAmount[1].amount += 1;
+                    } else if (d.properties.currentMode == "AtRecreation") {
+                        currentModeAmount[2].amount += 1;
+                    } else if (d.properties.currentMode == "AtRestaurant") {
+                        currentModeAmount[3].amount += 1;
+                    } else if (d.properties.currentMode == "AtWork") {
+                        currentModeAmount[4].amount += 1;
+                    }
+                });
+
+                // draw currentMode bar chart
+                currentModeBarGroup1.selectAll('rect').data(currentModeAmount).join('rect')
+                    .attr('x', 0)
+                    .attr('y', d => yScale7(d.mode))       
+                    .attr('width', d => xScale7(d.amount / 6))
+                    .attr('height', 30)
+                    .attr('fill', d => colorScale6(d.mode))
+                    .attr('opacity', 0.75)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 1);
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show currentMode amount
+                        tooltip.html("<p>mode: " + d.mode + "</p>" +
+                            "<p>amount: " + (d.amount / 6).toFixed(2) + " hours" + "</p>") 
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 0.75);
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // apend text to currentModeBarGroup1
+                currentModeBarGroup1.selectAll('text').data(currentModeAmount).join('text')
+                    .attr('x', d => xScale7(d.amount / 6) + 5)
+                    .attr('y', d => yScale7(d.mode) + 18)
+                    .attr('fill', 'black')
+                    .attr('font-size', 12)
+                    .text("par_0");
+            });
+
+            // draw participant2 activity
+            d3.json('./data/Activity_Logs/par_30.json').then(data => {
+                // filter data according to date
+                var features = data.features.filter(d => {
+                    var date1 = removeOffset(new Date(d.properties.timestamp));
+                    return date1.getFullYear() == date.getFullYear() && date1.getMonth() == date.getMonth() && date1.getDate() == date.getDate();
+                });
+
+                // draw apartment according to features[0] with d3 symbolStar
+                var apartment2 = [features[0].properties.apartment];
+                apartmentGroup2.selectAll('path')
+                    .data(apartment2)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolStar).size(200))
+                    .attr('transform', d => `translate(${xScale1(+d.geometry.coordinates[0])}, ${yScale1(+d.geometry.coordinates[1])})`)
+                    .attr('fill', actColorScale1("par_30"))
+                    .attr('opacity', 0.6)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", "lightblue");
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show apartmentId, apartmentType, maxOccupancy
+                        tooltip.html("<p>apartmentId: " + d.properties.apartmentId + "</p>" +
+                            "<p>rentalCost: " + d.properties.rentalCost + "</p>")
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", actColorScale1("par_30"));
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // draw job according to features[0] with d3 symbolCross
+                var employer2 = [features[0].properties];
+                employerGroup2.selectAll('path')
+                    .data(employer2)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolCross).size(200))
+                    .attr('transform', d => `translate(${xScale1(+d.employer.geometry.coordinates[0])}, ${yScale1(+d.employer.geometry.coordinates[1])})`)
+                    .attr('fill', actColorScale1("par_30"))
+                    .attr('opacity', 0.6)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", "lightblue");
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show hourlyRate, startTime, endTime, daysToWork, educationRequirement
+                        tooltip.html("<p>hourlyRate: " + d.job.properties.hourlyRate + "</p>" +
+                            "<p>startTime: " + d.job.properties.startTime + "</p>" +
+                            "<p>endTime: " + d.job.properties.endTime + "</p>" +
+                            "<p>daysToWork: " + d.job.properties.daysToWork + "</p>" +
+                            "<p>educationRequirement: " + d.job.properties.educationRequirement + "</p>")
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", actColorScale1("par_30"));
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // plot each coordinate on parGroup2 with d3 symbolCircle
+                parGroup2.selectAll('path')
+                    .data(features)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolCircle).size(20))
+                    .attr('transform', d => `translate(${xScale1(+d.geometry.coordinates[0])}, ${yScale1(+d.geometry.coordinates[1])})`)
+                    .attr('fill', actColorScale1("par_30"))
+                    .attr('opacity', 1);
+
+                // draw balance circle
+                balancecircleGroup2.selectAll('circle').data(features).join('circle')
+                    .attr('cx', d => xScale2(new Date(d.properties.timestamp)))
+                    .attr('cy', d => yScale2(d.properties.availableBalance))
+                    .attr('r', 2)
+                    .attr('fill', colorScale2('par_30'))
+                    .attr('opacity', 1);
+
+                // draw weeklyExtraBudget circle
+                extrabudgetGroup2.selectAll('circle').data(features).join('circle')
+                    .attr('cx', d => xScale3(new Date(d.properties.timestamp)))
+                    .attr('cy', d => yScale3(d.properties.weeklyExtraBudget + 1))
+                    .attr('r', 2)
+                    .attr('fill', colorScale3('par_30'))
+                    .attr('opacity', 1);
+
+                // initialize sleepStatus amount collector
+                var sleepStatusAmount = [
+                    { "status": "Sleeping", "amount": 0 },
+                    { "status": "Awake", "amount": 0 },
+                    { "status": "PrepareToSleep", "amount": 0 },
+                ];
+
+                // update sleepStatusAmount according to features
+                features.forEach(d => {
+                    if (d.properties.sleepStatus == "Sleeping") {
+                        sleepStatusAmount[0].amount += 1;
+                    } else if (d.properties.sleepStatus == "Awake") {
+                        sleepStatusAmount[1].amount += 1;
+                    } else if (d.properties.sleepStatus == "PrepareToSleep") {
+                        sleepStatusAmount[2].amount += 1;
+                    }
+                });
+
+                // draw sleepStatus bar chart
+                sleepStatusBarGroup2.selectAll('rect').data(sleepStatusAmount).join('rect')
+                    .attr('x', 0)
+                    .attr('y', d => yScale6(d.status) + 45)
+                    .attr('width', d => xScale6(d.amount / 6))
+                    .attr('height', 40)
+                    .attr('fill', d => colorScale5(d.status))
+                    .attr('opacity', 0.75)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 1);
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show sleepStatus amount
+                        tooltip.html("<p>status: " + d.status + "</p>" +
+                            "<p>amount: " + (d.amount / 6).toFixed(2) + " hours" + "</p>") 
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 0.75);
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // apend text to sleepStatusBarGroup2
+                sleepStatusBarGroup2.selectAll('text').data(sleepStatusAmount).join('text')
+                    .attr('x', d => xScale6(d.amount / 6) + 5)
+                    .attr('y', d => yScale6(d.status) + 70)
+                    .attr('fill', 'black')
+                    .attr('font-size', 12)
+                    .text("par_30");
+
+                // initialize currentMode amount collector
+                var currentModeAmount = [
+                    { "mode": "AtHome", "amount": 0 },
+                    { "mode": "Transport", "amount": 0 },
+                    { "mode": "AtRecreation", "amount": 0 },
+                    { "mode": "AtRestaurant", "amount": 0 },
+                    { "mode": "AtWork", "amount": 0 },
+                ];
+
+                // update currentModeAmount according to features
+                features.forEach(d => {
+                    if (d.properties.currentMode == "AtHome") {
+                        currentModeAmount[0].amount += 1;
+                    } else if (d.properties.currentMode == "Transport") {
+                        currentModeAmount[1].amount += 1;
+                    } else if (d.properties.currentMode == "AtRecreation") {
+                        currentModeAmount[2].amount += 1;
+                    } else if (d.properties.currentMode == "AtRestaurant") {
+                        currentModeAmount[3].amount += 1;
+                    } else if (d.properties.currentMode == "AtWork") {
+                        currentModeAmount[4].amount += 1;
+                    }
+                });
+
+                // draw currentMode bar chart
+                currentModeBarGroup2.selectAll('rect').data(currentModeAmount).join('rect')
+                    .attr('x', 0)
+                    .attr('y', d => yScale7(d.mode) + 35)       
+                    .attr('width', d => xScale7(d.amount / 6))
+                    .attr('height', 30)
+                    .attr('fill', d => colorScale6(d.mode))
+                    .attr('opacity', 0.75)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 1);
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show currentMode amount
+                        tooltip.html("<p>mode: " + d.mode + "</p>" +
+                            "<p>amount: " + (d.amount / 6).toFixed(2) + " hours" + "</p>") 
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("opacity", 0.75);
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // apend text to currentModeBarGroup1
+                currentModeBarGroup2.selectAll('text').data(currentModeAmount).join('text')
+                    .attr('x', d => xScale7(d.amount / 6) + 5)
+                    .attr('y', d => yScale7(d.mode) + 55)
+                    .attr('fill', 'black')
+                    .attr('font-size', 12)
+                    .text("par_30");
+            });
+
+            // draw financial status of par_0
+            d3.json("./data/Journals/FinancialJournal_0.json").then(data => {
+                // filter data according to date
+                var features = data.features.filter(d => {
+                    var date1 = removeOffset(new Date(d.properties.timestamp));
+                    return date1.getFullYear() == date.getFullYear() && date1.getMonth() == date.getMonth() && date1.getDate() == date.getDate();
+                });
+ 
+                // construct axis
+                xScale4.domain(d3.extent(features, d => new Date(d.properties.timestamp)))
+                    .range([0, width4 / 2]);
+
+
+                // create xAxis3
+                const xAxis3 = d3.axisBottom(xScale4).ticks(0).tickFormat(function(d) {
+                    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+                });
+
+                // create xAxisGroup3
+                const xAxisGroup3 = svg4.append('g').attr('id', 'xAxisGroup3').call(xAxis3)
+                    .attr('transform', `translate(0, ${height4 / 2 - 50})`);
+
+                xAxisGroup3.append('text').attr('class', 'axisTitle')
+                    .attr('x', width2 / 2).attr('y', 20);
+                d3.selectAll('.tick text').attr('font-size', '1.2em')
+                d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em'); 
+
+                // draw financial symbol with d3 symbolDiamond
+                financialGroup1.selectAll('path')
+                    .data(features)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolDiamond).size(200))
+                    .attr('transform', d => `translate(${xScale4(new Date(d.properties.timestamp))}, ${yScale4(d.properties.amount)})`) 
+                    .attr('fill', d => colorScale4(d.properties.category))
+                    .attr('opacity', 1)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", "lightblue");
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show amount (.2f), category, timestamp
+                        currentTime = new Date(d.properties.timestamp);
+                        tooltip.html("<p>amount: " + d.properties.amount.toFixed(2) + "</p>" +
+                            "<p>category: " + d.properties.category + "</p>" +
+                            "<p>timestamp: " + currentTime.toUTCString() + "</p>")
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", d => colorScale4(d.properties.category));
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+            })
+
+            // draw financial status of par_30
+            d3.json("./data/Journals/FinancialJournal_30.json").then(data => {
+                // filter data according to date
+                var features = data.features.filter(d => {
+                    var date1 = removeOffset(new Date(d.properties.timestamp));
+                    return date1.getFullYear() == date.getFullYear() && date1.getMonth() == date.getMonth() && date1.getDate() == date.getDate();
+                });
+
+                // construct axis
+                xScale5.domain(d3.extent(features, d => new Date(d.properties.timestamp)))
+                    .range([0, width4 / 2]);
+
+
+                // create xAxis4
+                const xAxis4 = d3.axisBottom(xScale5).ticks(0).tickFormat(function(d) {
+                    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+                });
+
+                // create xAxisGroup4
+                const xAxisGroup4 = svg4.append('g').attr('id', 'xAxisGroup3').call(xAxis4)
+                    .attr('transform', `translate(0, ${height4})`);
+
+                xAxisGroup4.append('text').attr('class', 'axisTitle')
+                    .attr('x', width2 / 2).attr('y', 20);
+                d3.selectAll('.tick text').attr('font-size', '1.2em')
+                d3.selectAll('.axisTitle').attr('text-anchor', "middle").attr('fill', 'black').attr('font-size', '2em'); 
+
+                // draw financial symbol with d3 symbolDiamond
+                financialGroup2.selectAll('path')
+                    .data(features)
+                    .enter().append('path')
+                    .attr('d', d3.symbol().type(d3.symbolDiamond).size(200))
+                    .attr('transform', d => `translate(${xScale5(new Date(d.properties.timestamp))}, ${yScale5(d.properties.amount)})`) 
+                    .attr('fill', d => colorScale4(d.properties.category))
+                    .attr('opacity', 1)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", "lightblue");
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        // show amount (.2f), category, timestamp
+                        currentTime = new Date(d.properties.timestamp);
+                        tooltip.html("<p>amount: " + d.properties.amount.toFixed(2) + "</p>" +
+                            "<p>category: " + d.properties.category + "</p>" +
+                            "<p>timestamp: " + currentTime.toUTCString() + "</p>")
+                            .style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        d3.select(this).transition().duration(100).attr("fill", d => colorScale4(d.properties.category));
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+            })
+        }
+
+        // create a simple d3 time slider
+        const startDate = new Date("2022-03-01T00:00:00Z");
+        const dayMapping = {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat"};
+        let slider = d3.select(".slider")
+			.append("input")
+			.attr("type", "range")
+			.attr("min", 0)
+			.attr("max", 125)
+			.attr("step", 1)
+            .attr("x", 1000)
+			.on("input", function() {
+				let day = this.value; 
+				update(day);
+			});
+
+        // set slider length 1000
+        slider.style("width", "1000px");
+
+        function update(day){
+            // Update day time
+            var time = startDate.getTime();
+            var newTime = time + day * 24 * 60 * 60 * 1000 + startDate.getTimezoneOffset() * 60 * 1000;
+            var currentDate = new Date();
+            currentDate.setTime(newTime);
+            dateStr = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1) + "-" + (currentDate.getDate()) + " " + dayMapping[currentDate.getDay()];
+
+            // set slider
+            slider.property("value", day);
+            d3.select(".date").text(dateStr); 
+
+            // remove all symbolCircles in parGroup
+            parGroup1.selectAll("path").remove();
+            parGroup2.selectAll("path").remove();
+
+            // remove all symbolStars in apartmentGroup
+            apartmentGroup1.selectAll("path").remove();
+            apartmentGroup2.selectAll("path").remove();
+
+            // remove all symbolCross in employerGroup
+            employerGroup1.selectAll("path").remove();
+            employerGroup2.selectAll("path").remove();
+
+            // remove all circles in balancecircleGroup
+            balancecircleGroup1.selectAll("circle").remove();
+            balancecircleGroup2.selectAll("circle").remove();
+
+            // remove all circles in extraBudgetGroup
+            extrabudgetGroup1.selectAll("circle").remove();
+            extrabudgetGroup2.selectAll("circle").remove();
+
+            // remove all items in financialGroup
+            financialGroup1.selectAll("path").remove();
+            financialGroup2.selectAll("path").remove();
+
+            // remove all items in sleepStatusPieGroup
+            // sleepStatusPieGroup1.selectAll("path").remove();
+            // sleepStatusPieGroup2.selectAll("path").remove();
+
+            // remove all items in currentModePieGroup
+            // currentModePieGroup1.selectAll("path").remove();
+            // currentModePieGroup2.selectAll("path").remove();
+
+            // draw symbolCircle according to current date
+            updateActivity(currentDate);
+        }
+        
+        update(0);
+
+
+    </script>
+</body>
+</html>
