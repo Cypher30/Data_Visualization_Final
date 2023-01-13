@@ -1,0 +1,325 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 445,
+                "foodCost": 5.15,
+                "maxOccupancy ": 71,
+                "buildingId": 304
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    631.5130723031391,
+                    2001.4772026036535
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 446,
+                "foodCost": 4.17,
+                "maxOccupancy ": 82,
+                "buildingId": 308
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    413.840000705876,
+                    1194.128694228948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 447,
+                "foodCost": 5.87,
+                "maxOccupancy ": 119,
+                "buildingId": 58
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    497.9967937001494,
+                    1624.515148185587
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 448,
+                "foodCost": 4.07,
+                "maxOccupancy ": 98,
+                "buildingId": 964
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    698.2411158717262,
+                    4392.416668183332
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 449,
+                "foodCost": 5.11,
+                "maxOccupancy ": 53,
+                "buildingId": 181
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1407.7107695149243,
+                    4010.4574815269225
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 895,
+                "foodCost": 4.44,
+                "maxOccupancy ": 103,
+                "buildingId": 164
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1623.0740591441258,
+                    3872.0300113645017
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 896,
+                "foodCost": 5.86,
+                "maxOccupancy ": 107,
+                "buildingId": 619
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2126.1723943111892,
+                    4285.182228265561
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 897,
+                "foodCost": 5.76,
+                "maxOccupancy ": 104,
+                "buildingId": 875
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1989.63526350385,
+                    3368.764837974986
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 898,
+                "foodCost": 4.22,
+                "maxOccupancy ": 115,
+                "buildingId": 917
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1771.452216635636,
+                    4343.580176583138
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 899,
+                "foodCost": 5.65,
+                "maxOccupancy ": 85,
+                "buildingId": 86
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -820.9290279479601,
+                    4497.243308530136
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1345,
+                "foodCost": 4.7,
+                "maxOccupancy ": 72,
+                "buildingId": 991
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1176.8013302032396,
+                    5846.6471242364805
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1346,
+                "foodCost": 5.85,
+                "maxOccupancy ": 74,
+                "buildingId": 27
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3529.558386975454,
+                    4809.641127666926
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1347,
+                "foodCost": 4.41,
+                "maxOccupancy ": 87,
+                "buildingId": 679
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1221.4051100732,
+                    4941.00338419236
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1348,
+                "foodCost": 4.23,
+                "maxOccupancy ": 57,
+                "buildingId": 124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -508.12691044634744,
+                    6307.584421447018
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1349,
+                "foodCost": 4.77,
+                "maxOccupancy ": 104,
+                "buildingId": 888
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1176.6989055164295,
+                    4726.117600229471
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1801,
+                "foodCost": 5.51,
+                "maxOccupancy ": 64,
+                "buildingId": 160
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3136.1278958093117,
+                    6671.917461867151
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1802,
+                "foodCost": 5.08,
+                "maxOccupancy ": 72,
+                "buildingId": 714
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4002.9335312988205,
+                    6671.996711133368
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1803,
+                "foodCost": 4.35,
+                "maxOccupancy ": 94,
+                "buildingId": 213
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3182.885940731813,
+                    7167.608699410916
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1804,
+                "foodCost": 5.92,
+                "maxOccupancy ": 48,
+                "buildingId": 101
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4131.41409222454,
+                    7236.525633225643
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "restaurantId": 1805,
+                "foodCost": 5.59,
+                "maxOccupancy ": 85,
+                "buildingId": 285
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3927.9102395808727,
+                    5494.63962663673
+                ]
+            }
+        }
+    ]
+}
