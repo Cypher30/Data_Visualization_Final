@@ -1350,13 +1350,13 @@
             financialGroup1.selectAll("path").remove();
             financialGroup2.selectAll("path").remove();
 
-            // remove all items in sleepStatusPieGroup
-            // sleepStatusPieGroup1.selectAll("path").remove();
-            // sleepStatusPieGroup2.selectAll("path").remove();
+            // remove all items in sleepStatusBarGroup
+            sleepStatusBarGroup1.selectAll("rect").remove();
+            sleepStatusBarGroup2.selectAll("rect").remove();
 
-            // remove all items in currentModePieGroup
-            // currentModePieGroup1.selectAll("path").remove();
-            // currentModePieGroup2.selectAll("path").remove();
+            // remove all items in currentModeBarGroup
+            currentModeBarGroup1.selectAll("rect").remove();
+            currentModeBarGroup2.selectAll("rect").remove();
 
             // draw symbolCircle according to current date
             updateActivity(currentDate);
